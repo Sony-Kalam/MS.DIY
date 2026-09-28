@@ -1,0 +1,6 @@
+{
+  "name": "Papier & Quill - Mindful Stationery & Custom Desk Goods",
+  "description": "A curated atelier for minimalist, cute, and professional stationery, office essentials, and interactive personalized notebooks.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
