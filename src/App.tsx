@@ -12,12 +12,14 @@ import { Footer } from './components/Footer';
 import { ProductDetailModal } from './components/ProductDetailModal';
 import { CartDrawer } from './components/CartDrawer';
 import { CheckoutModal } from './components/CheckoutModal';
+import { N8nChat } from './components/N8nChat';
 
 function MainStore() {
   const { isCheckoutOpen, setIsCheckoutOpen } = useCart();
   const [activeCategory, setActiveCategory] = useState<ProductCategory>('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [isChatOpen, setIsChatOpen] = useState(false);
 
   const handleNavigate = (sectionId: string) => {
     const el = document.getElementById(sectionId);
@@ -42,6 +44,7 @@ function MainStore() {
         onNavigate={handleNavigate}
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}
+        onOpenChat={() => setIsChatOpen(true)}
       />
 
       {/* Main Content Area */}
@@ -79,6 +82,7 @@ function MainStore() {
       <Footer
         onNavigate={handleNavigate}
         onOpenPhotoStudio={handleOpenPhotoStudio}
+        onOpenChat={() => setIsChatOpen(true)}
       />
 
       {/* Modals & Overlays */}
@@ -95,6 +99,12 @@ function MainStore() {
       <CheckoutModal
         isOpen={isCheckoutOpen}
         onClose={() => setIsCheckoutOpen(false)}
+      />
+
+      {/* n8n Live Chat Assistant */}
+      <N8nChat
+        isOpenExternal={isChatOpen}
+        onCloseExternal={() => setIsChatOpen(false)}
       />
     </div>
   );

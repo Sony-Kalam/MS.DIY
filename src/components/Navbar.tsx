@@ -6,12 +6,14 @@ interface NavbarProps {
   onNavigate: (sectionId: string) => void;
   searchQuery: string;
   onSearchChange: (q: string) => void;
+  onOpenChat?: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
   onNavigate,
   searchQuery,
   onSearchChange,
+  onOpenChat,
 }) => {
   const { cartCount, setIsCartOpen } = useCart();
   const [showSearchInput, setShowSearchInput] = useState(false);
@@ -104,6 +106,19 @@ export const Navbar: React.FC<NavbarProps> = ({
               aria-label="Search store"
             >
               <Search className="w-5 h-5" />
+            </button>
+          )}
+
+          {/* Live n8n Chat Trigger */}
+          {onOpenChat && (
+            <button
+              onClick={onOpenChat}
+              className="p-2 text-[#4A4E69] hover:text-[#E07A5F] transition-colors rounded-xl hover:bg-[#FFF0EB] flex items-center gap-1.5 cursor-pointer"
+              title="Chat with MS.DIY Assistant"
+              aria-label="Open chat"
+            >
+              <span className="text-base">💬</span>
+              <span className="hidden lg:inline text-xs font-bold text-[#E07A5F]">Chat</span>
             </button>
           )}
 

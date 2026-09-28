@@ -4,9 +4,10 @@ import { Mail, Check, ShieldCheck, Heart, Sparkles, Smile } from 'lucide-react';
 interface FooterProps {
   onNavigate: (sectionId: string) => void;
   onOpenPhotoStudio: () => void;
+  onOpenChat?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenPhotoStudio }) => {
+export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenPhotoStudio, onOpenChat }) => {
   const [newsletterEmail, setNewsletterEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
 
@@ -104,6 +105,16 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenPhotoStudio })
               <li>
                 <span className="text-slate-400">Happiness Guarantee:</span> 30-Day Free Returns
               </li>
+              {onOpenChat && (
+                <li className="pt-1">
+                  <button
+                    onClick={onOpenChat}
+                    className="text-[#FFB7B2] hover:text-white transition-colors cursor-pointer font-bold flex items-center gap-1.5"
+                  >
+                    <span>💬 Live Chat Assistant</span>
+                  </button>
+                </li>
+              )}
             </ul>
           </div>
 

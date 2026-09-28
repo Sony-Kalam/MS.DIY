@@ -37,3 +37,33 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #B8B0A2;
 }
+
+/* n8n Chat Widget Customization for MS.DIY */
+:root {
+  --chat--color-primary: #e07a5f;
+  --chat--color-primary-shade-50: #cc684f;
+  --chat--color-primary-shade-100: #b8573f;
+  --chat--color-secondary: #f7d6c8;
+  --chat--color-white: #ffffff;
+  --chat--color-light: #fffdf9;
+  --chat--color-dark: #2b2d42;
+  --chat--window--width: 380px;
+  --chat--window--height: 560px;
+  --chat--border-radius: 1.25rem;
+  --chat--header--background: #e07a5f;
+  --chat--header--color: #ffffff;
+  --chat--toggle--background: #e07a5f;
+  --chat--toggle--hover--background: #cc684f;
+  --chat--toggle--color: #ffffff;
+  --chat--message--bot--background: #fff5ee;
+  --chat--message--bot--color: #2b2d42;
+  --chat--message--user--background: #e07a5f;
+  --chat--message--user--color: #ffffff;
+}
+
+.n8n-chat,
+.n8n-chat-widget {
+  font-family: var(--font-sans) !important;
+  z-index: 9999 !important;
+}
+
